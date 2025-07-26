@@ -145,6 +145,11 @@
                     <i class="fas fa-plus"></i>
                     <span data-key="addTestOrder">Commande test</span>
                 </button>
+                
+                <button class="btn btn-secondary" id="notifyCustomersBtn">
+                    <i class="fas fa-bell"></i>
+                    <span data-key="notifyCustomers">Informer les clients selon l'état</span>
+                </button>
             </div>
         </div>
 
@@ -241,10 +246,10 @@
                     <button class="btn btn-secondary" id="addNotesBtn" data-key="memos">📝 Mémos / Notes</button>
                 </div>
                 
-                <div class="delete-action">
-                    <button class="btn btn-danger btn-delete-order" id="deleteOrderBtn" data-key="deleteOrder">
+                <div class="extended-actions">
+                    <button class="btn btn-danger" id="deleteOrderBtn" data-key="deleteOrder">
                         <i class="fas fa-trash"></i>
-                        <span>Supprimer la commande</span>
+                        <span>Supprimer</span>
                     </button>
                 </div>
                 
@@ -261,38 +266,6 @@
                             ⏳ Rappeler plus tard
                         </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- WhatsApp Notification Modal -->
-    <div class="modal-overlay" id="whatsappModalOverlay">
-        <div class="whatsapp-modal">
-            <div class="modal-header">
-                <h3>
-                    <i class="fab fa-whatsapp whatsapp-icon"></i>
-                    <span data-key="whatsappNotification">Notification WhatsApp</span>
-                </h3>
-                <button class="modal-close" id="whatsappModalClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <div class="modal-body">
-                <p class="modal-text" data-key="whatsappQuestion">
-                    Voulez-vous notifier le client via WhatsApp du changement de statut ?
-                </p>
-                
-                <div class="modal-actions">
-                    <button class="btn btn-cancel" id="whatsappCancelBtn">
-                        <i class="fas fa-times"></i>
-                        <span data-key="cancel">Annuler</span>
-                    </button>
-                    <button class="btn btn-whatsapp" id="whatsappSendBtn">
-                        <i class="fab fa-whatsapp"></i>
-                        <span data-key="sendWhatsApp">Envoyer WhatsApp</span>
-                    </button>
                 </div>
             </div>
         </div>
