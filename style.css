@@ -1049,16 +1049,15 @@ body {
 }
 
 /* Extended Actions */
-.extended-actions {
+.delete-action {
     display: flex;
-    gap: 0.75rem;
+    justify-content: center;
     padding: 0 1.5rem 1.5rem 1.5rem;
-    flex-wrap: wrap;
 }
 
-.extended-actions .btn {
-    flex: 1;
-    min-width: 140px;
+.delete-action .btn-delete-order {
+    width: 100%;
+    max-width: 300px;
     padding: 0.875rem 1rem;
     font-size: 0.9rem;
     font-weight: 600;
@@ -1072,41 +1071,18 @@ body {
     gap: 0.5rem;
 }
 
-.extended-actions .btn-danger {
+.delete-action .btn-danger {
     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
     color: white;
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
-.extended-actions .btn-danger:hover {
+.delete-action .btn-danger:hover {
     background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     transform: translateY(-1px);
     box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
 }
 
-.extended-actions .btn-info {
-    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-    color: white;
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
-}
-
-.extended-actions .btn-info:hover {
-    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(6, 182, 212, 0.4);
-}
-
-.extended-actions .btn-success {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: white;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-}
-
-.extended-actions .btn-success:hover {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
-}
 
 /* Delete Confirmation Modal */
 .delete-modal {
@@ -1444,9 +1420,10 @@ body {
     }
     
     .invoice-modal {
-        margin: 1rem;
-        max-width: calc(100vw - 2rem);
-        max-height: calc(100vh - 2rem);
+        margin: 0.5rem;
+        max-width: calc(100vw - 1rem);
+        max-height: calc(100vh - 1rem);
+        border-radius: 12px;
     }
     
     .action-buttons {
@@ -1460,24 +1437,52 @@ body {
     }
     
     .modal-header {
-        padding: 1.25rem;
+        padding: 1rem;
     }
     
     .modal-header h2 {
-        font-size: 1.375rem;
+        font-size: 1.25rem;
     }
     
     .invoice-fields {
-        padding: 1.25rem;
+        padding: 1rem;
+        padding-bottom: 0;
+    }
+    
+    .field-row {
+        padding: 0.75rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .field-label {
+        font-size: 0.8rem;
+        min-width: auto;
+    }
+    
+    .field-value {
+        font-size: 0.9rem;
+        text-align: left;
     }
     
     .total-section {
-        margin: 1.25rem;
+        margin: 1rem;
         margin-bottom: 0;
+        padding: 1rem;
     }
     
     .notes-section {
-        margin: 0 1.25rem 1.25rem 1.25rem;
+        margin: 0 1rem 1rem 1rem;
+    }
+    
+    .delete-action {
+        padding: 0 1rem 1rem 1rem;
+    }
+    
+    .delete-action .btn-delete-order {
+        padding: 1rem;
+        font-size: 1rem;
     }
     
     /* WhatsApp Modal Mobile */
@@ -1579,11 +1584,8 @@ body {
         padding: var(--spacing-xl);
     }
     
-    /* Desktop Modal */
     .invoice-modal {
-        max-width: 520px;
-        max-height: 85vh;
-        height: auto;
+        max-width: 540px;
     }
     
     .orders-table {
