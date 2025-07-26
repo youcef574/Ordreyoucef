@@ -1049,15 +1049,15 @@ body {
 }
 
 /* Extended Actions */
-.delete-action {
+.extended-actions {
     display: flex;
-    justify-content: center;
+    gap: 0.75rem;
     padding: 0 1.5rem 1.5rem 1.5rem;
+    justify-content: center;
 }
 
-.delete-action .btn-delete-order {
-    width: 100%;
-    max-width: 300px;
+.extended-actions .btn {
+    min-width: 160px;
     padding: 0.875rem 1rem;
     font-size: 0.9rem;
     font-weight: 600;
@@ -1071,18 +1071,41 @@ body {
     gap: 0.5rem;
 }
 
-.delete-action .btn-danger {
+.extended-actions .btn-danger {
     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
     color: white;
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
-.delete-action .btn-danger:hover {
+.extended-actions .btn-danger:hover {
     background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     transform: translateY(-1px);
     box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
 }
 
+.extended-actions .btn-info {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.extended-actions .btn-info:hover {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(6, 182, 212, 0.4);
+}
+
+.extended-actions .btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.extended-actions .btn-success:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
 
 /* Delete Confirmation Modal */
 .delete-modal {
@@ -1232,106 +1255,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* WhatsApp Notification Modal - NEW ADDITION */
-.whatsapp-modal {
-    background: var(--bg-white);
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 400px;
-    transform: scale(0.9);
-    transition: var(--transition-normal);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.modal-overlay.show .whatsapp-modal {
-    transform: scale(1);
-}
-
-.whatsapp-modal .modal-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid #f1f5f9;
-    background: var(--bg-white);
-    color: var(--text-black);
-    border-radius: 16px 16px 0 0;
-    position: relative;
-    text-align: center;
-}
-
-.whatsapp-modal .modal-header h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin: 0;
-    color: var(--text-black);
-    letter-spacing: -0.025em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.whatsapp-modal .modal-header .whatsapp-icon {
-    color: #25D366;
-    font-size: 1.5rem;
-}
-
-.whatsapp-modal .modal-body {
-    padding: 1.5rem;
-}
-
-.whatsapp-modal .modal-text {
-    font-size: 1rem;
-    color: var(--text-gray);
-    text-align: center;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-}
-
-.whatsapp-modal .modal-actions {
-    display: flex;
-    gap: 0.75rem;
-}
-
-.whatsapp-modal .modal-actions .btn {
-    flex: 1;
-    padding: 0.875rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 10px;
-    transition: all 0.2s ease;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.whatsapp-modal .btn-whatsapp {
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    color: white;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-}
-
-.whatsapp-modal .btn-whatsapp:hover {
-    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-modal .btn-cancel {
-    background: #f8fafc;
-    color: #475569;
-    border: 1px solid #e2e8f0;
-}
-
-.whatsapp-modal .btn-cancel:hover {
-    background: #f1f5f9;
-    color: #334155;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 /* Loading States */
 .loading {
     opacity: 0.6;
@@ -1420,10 +1343,9 @@ body {
     }
     
     .invoice-modal {
-        margin: 0.5rem;
-        max-width: calc(100vw - 1rem);
-        max-height: calc(100vh - 1rem);
-        border-radius: 12px;
+        margin: 1rem;
+        max-width: calc(100vw - 2rem);
+        max-height: calc(100vh - 2rem);
     }
     
     .action-buttons {
@@ -1437,70 +1359,26 @@ body {
     }
     
     .modal-header {
-        padding: 1rem;
+        padding: 1.25rem;
     }
     
     .modal-header h2 {
-        font-size: 1.25rem;
+        font-size: 1.375rem;
     }
     
     .invoice-fields {
-        padding: 1rem;
-        padding-bottom: 0;
-    }
-    
-    .field-row {
-        padding: 0.75rem 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25rem;
-    }
-    
-    .field-label {
-        font-size: 0.8rem;
-        min-width: auto;
-    }
-    
-    .field-value {
-        font-size: 0.9rem;
-        text-align: left;
+        padding: 1.25rem;
     }
     
     .total-section {
-        margin: 1rem;
+        margin: 1.25rem;
         margin-bottom: 0;
-        padding: 1rem;
     }
     
     .notes-section {
-        margin: 0 1rem 1rem 1rem;
+        margin: 0 1.25rem 1.25rem 1.25rem;
     }
-    
-    .delete-action {
-        padding: 0 1rem 1rem 1rem;
-    }
-    
-    .delete-action .btn-delete-order {
-        padding: 1rem;
-        font-size: 1rem;
-    }
-    
-    /* WhatsApp Modal Mobile */
-    .whatsapp-modal {
-        margin: 1rem;
-        max-width: calc(100vw - 2rem);
-    }
-    
-    .whatsapp-modal .modal-actions {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-    
-    .whatsapp-modal .modal-actions .btn {
-        padding: 1rem;
-        font-size: 1rem;
-    }
-    
+
     /* Delete Modal Mobile */
     .delete-modal {
         margin: 1rem;
@@ -1515,6 +1393,8 @@ body {
     .delete-modal .modal-actions .btn {
         padding: 1rem;
         font-size: 1rem;
+        min-width: 100%;
+        margin-bottom: 0.5rem;
     }
     
     /* Status dropdown mobile */
